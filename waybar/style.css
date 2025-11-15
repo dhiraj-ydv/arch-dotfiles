@@ -33,7 +33,6 @@ window#waybar {
   background: rgba(80, 80, 80, 0.8);
   color: #33ccff;
   box-shadow: 0 2px 12px rgba(51, 204, 255, 0.3);
-  transform: translateY(-1px);
 }
 
 #workspaces button.active {
@@ -47,12 +46,6 @@ window#waybar {
 #workspaces button.urgent {
   background: #ff6b6b;
   color: #fff;
-  animation: blink 1s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
 }
 
 #window {
@@ -166,18 +159,11 @@ window#waybar {
 #battery.warning:not(.charging) {
   color: #ffaa00;
   background: rgba(255, 170, 0, 0.2);
-  animation: pulse 2s ease-in-out infinite;
 }
 
 #battery.critical:not(.charging) {
   color: #ff4444;
   background: rgba(255, 68, 68, 0.25);
-  animation: pulse 1s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
 }
 
 #tray {
@@ -212,5 +198,4 @@ window#waybar {
   background: rgba(255, 107, 107, 0.25);
   border-color: rgba(255, 107, 107, 0.6);
   box-shadow: 0 2px 12px rgba(255, 107, 107, 0.5);
-  transform: scale(1.05);
 }
