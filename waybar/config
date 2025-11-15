@@ -4,7 +4,7 @@
   "height": 32,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "pulseaudio", "battery", "tray", "custom/power"],
+  "modules-right": ["network", "pulseaudio", "tray", "custom/power"],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -24,7 +24,12 @@
   "network": {
     "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈁  {ipaddr}",
-    "format-disconnected": ""
+    "format-disconnected": "  Disconnected",
+    "tooltip": true,
+    "tooltip-format-wifi": "  {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}\nGateway: {gwaddr}",
+    "tooltip-format-ethernet": "󰈁  {ifname}\nIP: {ipaddr}\nGateway: {gwaddr}",
+    "tooltip-format-disconnected": "Network Disconnected",
+    "on-click": "nm-connection-editor"
   },
 
   "pulseaudio": {
@@ -37,8 +42,8 @@
   },
 
   "custom/power": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "Power Options"
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
   }
 }
