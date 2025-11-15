@@ -14,13 +14,35 @@ My personal Arch Linux + Hyprland rice configuration files.
 - **Hyprlock** - Screen locker
 - **Hyprpaper** - Wallpaper daemon
 
-## 🎨 Theme
+## 🎨 Color Scheme
 
-Nord-inspired dark theme with cyan/green accents:
-- Primary: `#33ccff` (Cyan)
-- Secondary: `#00ff99` (Green)
-- Background: `#1e1e1e`
-- See `colors.conf` for full color scheme
+Nord-inspired dark theme with cyan/green accents.
+
+### Base Colors
+- **Background**: `#1e1e1e`
+- **Foreground**: `#ffffff`
+- **Black**: `#0c0c0c`
+- **White**: `#ffffff`
+
+### Accent Colors
+- **Primary** (Cyan): `#33ccff`
+- **Secondary** (Green): `#00ff99`
+- **Tertiary** (Pink): `#ff6b9d`
+- **Warning** (Yellow): `#ffcc00`
+- **Error** (Red): `#ff5555`
+
+### UI Colors
+- **Active Border**: `#33ccff`
+- **Inactive Border**: `#595959`
+- **Surface**: `#2a2a2a`
+- **Surface Variant**: `#3b3b3b`
+
+### Transparency
+- **Active Opacity**: `1.0`
+- **Inactive Opacity**: `0.95`
+- **Blur Opacity**: `0.8`
+
+**Note**: Colors are defined separately in each config file (hyprland.conf, waybar/style.css, wofi/style.css, etc.)
 
 ## 🚀 Installation
 
