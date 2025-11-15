@@ -9,11 +9,11 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": ""
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": ""
     }
   },
 
@@ -22,23 +22,17 @@
   },
 
   "network": {
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈁  {ipaddr}",
-    "format-disconnected": ""
+    "format-disconnected": ""
   },
 
   "pulseaudio": {
-    "format": "  {volume}%"
+    "format": "  {volume}%"
   },
 
   "battery": {
-    "format": "{capacity}% ",
-    "format-charging": "{capacity}% "
-  },
-
-  "custom/power": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "Power Options"
+    "format": "{capacity}% ",
+    "format-charging": "{capacity}% "
   }
 }
