@@ -379,15 +379,3 @@ hyprctl reload
 
 See `packages.sh` for complete package list.
 
-## 🌟 Credits & Inspiration
-
-- **Hyprland Community** - For the amazing Wayland compositor
-- **Various dotfiles repositories** - Configuration inspiration
-- Modern color palettes with cyan, green, and blue accents
-- Arch Linux community and documentation
-
----
-
-**Repository**: [github.com/dhiraj-ydv/arch-dotfiles](https://github.com/dhiraj-ydv/arch-dotfiles)
-
-Made with ❤️ for Arch Linux + Hyprland
