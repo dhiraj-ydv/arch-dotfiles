@@ -307,7 +307,6 @@ dotfiles/
 │   └── cliphist.sh         # Clipboard manager script
 ├── packages.sh              # Package installation script
 ├── setup-dotfiles.sh        # Dotfiles setup and symlink script
-├── fix-structure.sh         # Structure migration script (one-time use)
 └── README.md                # This file
 ```
 
