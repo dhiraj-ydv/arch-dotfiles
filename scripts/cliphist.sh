@@ -6,13 +6,10 @@ case $1 in
         wl-paste --watch cliphist store
         ;;
     menu)
-        selection=$(cliphist list | wofi --dmenu)
+        selection=$(cliphist list | wofi --dmenu --cache-file=/dev/null)
         if [ -n "$selection" ]; then
-            content=$(echo "$selection" | cliphist decode)
-            echo "$content" | wl-copy
-            # Type the content directly
-            sleep 0.1
-            wtype "$content"
+            cliphist decode <<< "$selection" | wl-copy
+            wtype -M ctrl -M shift v
         fi
         ;;
     clear)
