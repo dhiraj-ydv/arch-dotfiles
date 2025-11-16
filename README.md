@@ -86,21 +86,17 @@ This will install:
 - Network & Bluetooth (NetworkManager, bluez, blueman)
 - Fonts (JetBrains Mono Nerd Font, Font Awesome, Noto)
 
-3. **Symlink configurations**
+3. **Set up configurations**
 ```bash
-chmod +x symlink.sh
-./symlink.sh
+chmod +x setup-dotfiles.sh
+./setup-dotfiles.sh
 ```
 
-This creates symlinks for:
-- `nvim` → `~/.config/nvim`
-- `hypr` → `~/.config/hypr`
-- `kitty` → `~/.config/kitty`
-- `waybar` → `~/.config/waybar`
-- `wofi` → `~/.config/wofi`
-- `wlogout` → `~/.config/wlogout`
-- `dunst` → `~/.config/dunst`
-- `scripts` → `~/.config/scripts`
+This script:
+- Moves config directories from `~/Downloads/dotfiles` to `~/.config/`
+- Creates symlinks in `~/dotfiles/` pointing to `~/.config/`
+- Backs up existing configs as `.backup`
+- Makes scripts executable
 
 4. **Set up wallpaper**
 ```bash
@@ -275,49 +271,52 @@ Edit `~/dotfiles/hypr/hyprland.conf` line 120:
 Edit `~/dotfiles/hypr/hyprland.conf` lines 124-126:
 - `natural_scroll` - Enable/disable natural scrolling
 
-All configs are symlinked - changes in `~/dotfiles/` automatically apply to `~/.config/`.
+All configs are accessible through `~/dotfiles/` symlinks - changes in either `~/dotfiles/` or `~/.config/` automatically apply.
 Reload Hyprland with `hyprctl reload` or `SUPER + M` (exit) and re-login.
 
 ## 📁 File Structure
 
 ```
 dotfiles/
-├── hypr/                   # Hyprland configuration
-│   ├── hyprland.conf      # Main config: keybinds, animations, appearance
-│   ├── hyprlock.conf      # Lock screen config
-│   └── hyprpaper.conf     # Wallpaper config
-├── waybar/                 # Status bar
-│   ├── config             # Module configuration
-│   ├── config.bak         # Backup config
-│   ├── style.css          # Styling and colors
-│   └── scripts/           # Custom scripts (if any)
-├── wofi/                   # Application launcher
-│   ├── config             # Launcher settings
-│   └── style.css          # Theme and styling
-├── wlogout/                # Logout menu
-│   ├── layout             # Menu options and actions
-│   └── style.css          # Menu styling
-├── dunst/                  # Notification daemon
-│   └── dunstrc            # Notification config
-├── kitty/                  # Terminal emulator
-│   ├── kitty.conf         # Main terminal config
-│   ├── kitty.conf.bak     # Backup config
-│   └── current-theme.conf # Color theme
-├── nvim/                   # Neovim editor
-│   ├── init.lua           # Main configuration
-│   └── lazy-lock.json     # Plugin lockfile
-├── scripts/                # Utility scripts
-│   └── cliphist.sh        # Clipboard manager script
-├── packages.sh             # Package installation script
-├── symlink.sh              # Config symlink script
-└── README.md               # This file
+├── hypr/                    # Hyprland configuration (symlinked to ~/.config/hypr)
+│   ├── hyprland.conf       # Main config: keybinds, animations, appearance
+│   ├── hyprlock.conf       # Lock screen config
+│   └── hyprpaper.conf      # Wallpaper config
+├── waybar/                  # Status bar (symlinked to ~/.config/waybar)
+│   ├── config              # Module configuration
+│   ├── config.bak          # Backup config
+│   ├── style.css           # Styling and colors
+│   └── scripts/            # Custom scripts directory
+├── wofi/                    # Application launcher (symlinked to ~/.config/wofi)
+│   ├── config              # Launcher settings
+│   └── style.css           # Theme and styling
+├── wlogout/                 # Logout menu (symlinked to ~/.config/wlogout)
+│   ├── layout              # Menu options and actions
+│   └── style.css           # Menu styling
+├── dunst/                   # Notification daemon (symlinked to ~/.config/dunst)
+│   └── dunstrc             # Notification config
+├── kitty/                   # Terminal emulator (symlinked to ~/.config/kitty)
+│   ├── kitty.conf          # Main terminal config
+│   ├── kitty.conf.bak      # Backup config
+│   └── current-theme.conf  # Color theme
+├── nvim/                    # Neovim editor (symlinked to ~/.config/nvim)
+│   ├── init.lua            # Main configuration
+│   └── lazy-lock.json      # Plugin lockfile
+├── scripts/                 # Utility scripts (symlinked to ~/.config/scripts)
+│   └── cliphist.sh         # Clipboard manager script
+├── packages.sh              # Package installation script
+├── setup-dotfiles.sh        # Dotfiles setup and symlink script
+└── README.md                # This file
 ```
+
+**Note**: All config directories in `~/dotfiles/` are symlinks pointing to their respective locations in `~/.config/`. The actual configuration files reside in `~/.config/`, and `~/dotfiles/` serves as a convenient centralized location for version control and management.
 
 ## 📝 Notes
 
-- **Automated Setup**: Use `packages.sh` to install all dependencies and `symlink.sh` to configure
-- **Backup Protection**: Existing configs are backed up as `.backup` before symlinking
-- **Live Changes**: All configs are symlinked from `~/dotfiles/` - edit source files directly
+- **Automated Setup**: Use `packages.sh` to install all dependencies and `setup-dotfiles.sh` to configure
+- **Symlink Structure**: Configs are in `~/.config/` with symlinks in `~/dotfiles/` for easy version control
+- **Backup Protection**: Existing configs are backed up as `.backup` before setup
+- **Live Changes**: Edit files in `~/.config/` or through `~/dotfiles/` symlinks - changes apply immediately
 - **Clipboard History**: Starts automatically on login and runs in background
 - **Wallpaper Paths**: 
   - Hyprpaper: `~/Pictures/wallpaper.jpg`
