@@ -1,6 +1,6 @@
 # Arch Hyprland Dotfiles
 
-My personal Arch Linux + Hyprland rice configuration files.
+My personal Arch Linux + Hyprland configuration files.
 
 ## 📦 Components
 
